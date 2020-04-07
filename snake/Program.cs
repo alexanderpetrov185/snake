@@ -10,7 +10,8 @@ namespace snake
     {
         static void Main(string[] args)
         {
-            int SADasd;
+            Console.WriteLine("Hellow BITCH");
+            Console.ReadLine();
         }
     }
 }
