@@ -44,21 +44,26 @@ namespace snake
         public void HandleKey (ConsoleKey key)
         {
             if (key == ConsoleKey.LeftArrow)
-            {
                 direction = directions.LEFT;
-            }
             else if (key == ConsoleKey.RightArrow)
-            {
                 direction = directions.RIGHT;
-            }
             else if (key == ConsoleKey.UpArrow)
-            {
                 direction = directions.UP;
-            }
             else if (key == ConsoleKey.DownArrow)
-            {
                 direction = directions.DOWN;
+        }
+
+        internal bool Eat(Point food)
+        {
+            Point head = GetNextPoint();
+            if (head.IsHit(food))
+            {
+                food.sym = head.sym;
+                pList.Add(food);
+                return true;
             }
+            else
+                return false;
         }
     }
 }
